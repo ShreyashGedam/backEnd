@@ -7,6 +7,7 @@ const taskRouter = require('./routes/task.routes')
 const productRouter = require("./routes/products")
 const mainRouter = require("./routes/mainpage")
 const mainRouter2 = require("./routes/mainpage2")
+const cartRouter = require("./routes/carts")
 
 const app = express()
  
@@ -17,6 +18,7 @@ app.use('/user',taskRouter)
 app.use('/products',productRouter)
 app.use("/main-page-one",mainRouter) 
 app.use("/main-page-two",mainRouter2)
+app.use("/cartAdd",cartRouter)
 
 app.listen(8080 , async() => {
     try{ 

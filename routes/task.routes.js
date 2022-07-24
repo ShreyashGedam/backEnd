@@ -12,7 +12,7 @@ taskRouter.post("/:userId/tasks" , async (req,res) => {
     // console.log(req.params) 
     const userId = req.params.userId
     var payload = {
-        ...req.body,
+        ...req.body, 
         userId  
     }        
     const task = await  new TaskModel(payload)
