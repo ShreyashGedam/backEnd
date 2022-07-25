@@ -1,5 +1,9 @@
 const mongoose = require("mongoose")
+require("dotenv").config()
 
-const connection = mongoose.connect("mongodb://localhost:27017/mega")
+const mongodb_url = process.env.MONGODB_URL
 
-module.exports = connection
+
+const connection = mongoose.connect(mongodb_url)
+
+module.exports = connection    
