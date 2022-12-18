@@ -5,10 +5,11 @@ const productRouter = Router()
 productRouter.get("", async (req, res) => {
 
     var obj = req.query
-
+    // console.log(obj)
     if (req.query.name != undefined) {
+        // console.log("coming here in name")
         var mname = req.query.name.split(":")
-        console.log(mname)
+        // console.log(mname)
         var obj = {
             ...req.query,
             name: mname
