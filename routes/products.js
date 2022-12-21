@@ -3,22 +3,21 @@ const ProductsModel = require("../models/products")
 const productRouter = Router()
 
 productRouter.get("", async (req, res) => {
-
+ 
     var obj = req.query
-    // console.log(obj)
-    if (req.query.name != undefined) {
-        // console.log("coming here in name")
-        var mname = req.query.name.split(":")
-        // console.log(mname)
-        var obj = {
-            ...req.query,
-            name: mname
+    // console.log(req.query)
+    var { name } = req.query  
+
+    if (name) {
+        var name2 = name.split(",")
+        obj = { 
+            name: name2
         }
     }
-
+ 
     const tasks = await ProductsModel.find(obj)
-    // const tasks = await ProductsModel.find({ name: { $in: filter.name } })
-    return res.send(tasks)
+
+    return res.send(tasks)  
 })
 
 productRouter.get("/:userId/:productId", async (req, res) => {

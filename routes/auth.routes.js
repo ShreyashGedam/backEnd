@@ -26,7 +26,7 @@ authRouter.post("/login", async(req,res) => {
             name, 
             token : 54321
         }
-        res.send(payload) 
+        res.send(payload)   
     }  
     res.status(500).send({message : "Wrong Credentials"})
 })  
