@@ -14,7 +14,7 @@ productRouter.get("", async (req, res) => {
             name: name2
         }
     }
- 
+    
     const tasks = await ProductsModel.find(obj)
 
     return res.send(tasks)  
